@@ -8,11 +8,13 @@
         name="Lexi Mendez"
         phone-number="503 123 1234"
         email-address="lexi@acro.yoga"
+        is-favorite="1"
       ></friend-contact>
       <friend-contact
         name="Sahara Strothers"
         phone-number="503 321 4321"
         email-address="sahara@birdsofwisdom.com"
+        is-favorite="1"
       ></friend-contact>
     </ul>
   </section>
