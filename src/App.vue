@@ -7,10 +7,12 @@
       <friend-contact
         v-for="friend in friends"
         :key="friend.id"
+        :id="friend.id"
         :name="friend.name"
         :phone-number="friend.phone"
         :email-address="friend.email"
         :is-favorite="friend.isFavorite"
+        @toggle-favorite="toggleFavoriteStatus"
       ></friend-contact>
     </ul>
   </section>
@@ -24,19 +26,25 @@ export default {
         {
           id: 'lexi',
           name: 'Lexi Mendez',
-          phone: '5551231234',
-          email: 'lexi@email.com',
+          phone: '555 123 1234',
+          email: 'lexi@acro.yoga',
           isFavorite: true,
         },
         {
           id: 'sahara',
           name: 'Sahara Strothers',
-          phone: '5553214321',
-          email: 'sahara@email.com',
+          phone: '555 321 4321',
+          email: 'sahara@birdsofwisdom.com',
           isFavorite: true,
         },
       ],
     };
+  },
+  methods: {
+    toggleFavoriteStatus(props) {
+      const match = this.friends.find((friend) => friend.id === props.id);
+      match.isFavorite = !match.isFavorite;
+    },
   },
 };
 </script>
