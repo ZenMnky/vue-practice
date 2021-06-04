@@ -5,16 +5,12 @@
     </header>
     <ul>
       <friend-contact
-        name="Lexi Mendez"
-        phone-number="503 123 1234"
-        email-address="lexi@acro.yoga"
-        is-favorite="1"
-      ></friend-contact>
-      <friend-contact
-        name="Sahara Strothers"
-        phone-number="503 321 4321"
-        email-address="sahara@birdsofwisdom.com"
-        is-favorite="1"
+        v-for="friend in friends"
+        :key="friend.id"
+        :name="friend.name"
+        :phone-number="friend.phone"
+        :email-address="friend.email"
+        :is-favorite="friend.isFavorite"
       ></friend-contact>
     </ul>
   </section>
@@ -27,15 +23,17 @@ export default {
       friends: [
         {
           id: 'lexi',
-          name: 'lexi mendez',
+          name: 'Lexi Mendez',
           phone: '5551231234',
           email: 'lexi@email.com',
+          isFavorite: true,
         },
         {
           id: 'sahara',
-          name: 'sahara strothers',
+          name: 'Sahara Strothers',
           phone: '5553214321',
           email: 'sahara@email.com',
+          isFavorite: true,
         },
       ],
     };
